@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Market(models.Model):
     name = models.CharField(max_length=30)
     location = models.CharField(max_length=100)
@@ -9,6 +10,7 @@ class Market(models.Model):
     def __str__(self):
         return self.name
 
+
 class Seller(models.Model):
     name = models.CharField(max_length=30)
     contact_info = models.TextField()
@@ -16,6 +18,7 @@ class Seller(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=30)
