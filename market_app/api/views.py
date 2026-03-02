@@ -1,8 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import MarketHyperlinkedSerializer, MarketSerializer, SellerSerializer
-from market_app.models import Market, Product, Seller
-
+from market_app.models import Market, Seller
+from rest_framework.views import APIView
+from rest_framework import generics
 
 @api_view(['GET', 'POST'])
 def markets_view(request):
@@ -86,3 +87,4 @@ def sellers_single_view(request, pk):
         serializer = SellerSerializer(seller)
         seller.delete()
         return Response(serializer.data)
+    
